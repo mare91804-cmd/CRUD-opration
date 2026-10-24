@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Student Management System</h1>
+        <p>Manage student records easily</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2 id="formTitle">Add Student</h2>
+
+            <form id="studentForm">
+                <input type="hidden" id="editId">
+
+                <div class="form-grid">
+                    <div>
+                        <label for="studentId">Student ID</label>
+                        <input type="text" id="studentId"
+                               placeholder="Enter ID" required>
+                    </div>
+
+                    <div>
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name"
+                               placeholder="Enter full name" required>
+                    </div>
+
+                    <div>
+                        <label for="gender">Gender</label>
+                        <select id="gender" required>
+                            <option value="">Select gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="age">Age</label>
+                        <input type="number" id="age"
+                               min="1" max="120" placeholder="Enter age" required>
+                    </div>
+
+                    <div>
+                        <label for="year">Academic Year</label>
+                        <select id="year" required>
+                            <option value="">Select year</option>
+                            <option value="1">Year 1</option>
+                            <option value="2">Year 2</option>
+                            <option value="3">Year 3</option>
+                            <option value="4">Year 4</option>
+                            <option value="5">Year 5</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="department">Department</label>
+                        <input type="text" id="department"
+                               placeholder="Enter Department" required>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button type="submit" id="saveButton">Add Student</button>
+                    <button type="button" id="cancelButton"
+                            class="secondary" hidden>Cancel Edit</button>
+                </div>
+
+                <p id="message" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="card">
+            <div class="table-heading">
+                <h2>Student Records</h2>
+                <input type="search" id="search"
+                       placeholder="Search by ID or name...">
+            </div>
+
+            <p id="recordCount">Total students: 0</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Student ID</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Age</th>
+                            <th>Year</th>
+                            <th>Department</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTable">
+                        <tr>
+                            <td colspan="8">No student records yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer
